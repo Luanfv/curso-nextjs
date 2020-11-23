@@ -32,7 +32,7 @@ export default function Home({ recommendedProducts }: IHomeProps) {
   );
 }
 
-// FUNÇÃO QUE É CHAMADA ANTES DE RENDERIZAR
+// SERVER SIDE RENDERING
 export const getServerSideProps: GetServerSideProps<IHomeProps> = async () => {
   const response = await fetch('http://localhost:3333/recommended');
   const recommendedProducts = await response.json();
